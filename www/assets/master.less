@@ -63,7 +63,7 @@ select, option, .card .suit {
 @lg: 228px;
 
 .card {
-  height: @sm;
+  height: inherit;
   position: relative;
   // background: #222;
   background: #fff;
@@ -93,6 +93,12 @@ select, option, .card .suit {
   option {
     font-size: 16px;
     // background: #222; 
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    height: @sm;
   }
 }
 
