@@ -1,0 +1,80 @@
+@sm: 133px;
+@md: 183px;
+@lg: 228px;
+
+select, option, .card .suit {
+    cursor: pointer;
+}
+
+#card-2 {
+  color: red;
+}
+
+.settings {
+  margin-bottom: 15px;
+}
+
+.card {
+  height: @sm;
+  position: relative;
+  border: 1px solid black;
+  border-radius: @sm/20;
+
+  select {
+    height: @sm/2.5;
+    width: inherit;
+    margin: @sm/40 @sm/20;
+    padding: 0 6px;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-size: @sm/3;
+    font-weight: bold;
+  }
+  .suit {
+    position: absolute;
+    right: @sm/20;
+    bottom: 0;
+    font-size: @sm/1.5;
+    line-height: 0.86;
+  }
+  option {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    height: @md;
+    border-radius: @md/20;
+    select {
+      height: @md/2.5;
+      margin: @md/40 @md/20;
+      font-size: @md/3;
+    }
+    .suit {
+      right: @md/20;
+      font-size: @md/1.5;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    height: @lg;
+    border-radius: @lg/20;
+    select {
+      height: @lg/2.5;
+      margin: @lg/40 @lg/20;
+      font-size: @lg/3;
+    }
+    .suit {
+      right: @lg/20;
+      font-size: @lg/1.5;
+    }
+  }
+}
+
+#result {
+  margin-bottom: 0;
+}
