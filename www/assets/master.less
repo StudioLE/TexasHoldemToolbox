@@ -1,24 +1,76 @@
-@sm: 133px;
-@md: 183px;
-@lg: 228px;
+
+//  Variables
+// --------------------------------------------------
+
+@dark: #3e3f3a;
+@bone: #FDFDFD;
+
+//  Layout
+// --------------------------------------------------
+
+body {
+  background: @dark;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.nav, .mid {
+  background: @bone;
+}
+
+.mid {
+  padding-bottom: 100px;
+}
+
+.footer {
+  margin-top: 30px;
+  color: #fff;
+
+  .navbar-brand {
+    padding: 7px 0;
+    float: right;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+
+//  Styles
+// --------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+//  Hole Cards
+// --------------------------------------------------
 
 select, option, .card .suit {
     cursor: pointer;
-}
-
-#card-2 {
-  color: red;
 }
 
 .settings {
   margin-bottom: 15px;
 }
 
+#result {
+  margin-bottom: 0;
+}
+
+//  Responsive Cards
+// --------------------------------------------------
+
+@sm: 133px;
+@md: 183px;
+@lg: 228px;
+
 .card {
   height: @sm;
   position: relative;
-  border: 1px solid black;
+  // background: #222;
+  background: #fff;
+  border: 1px solid fade(@dark, 20%);
   border-radius: @sm/20;
+  box-shadow: 1px 1px 5px fade(@dark, 50%);
+  // color: #fff;
 
   select {
     height: @sm/2.5;
@@ -40,6 +92,7 @@ select, option, .card .suit {
   }
   option {
     font-size: 16px;
+    // background: #222; 
   }
 }
 
@@ -73,8 +126,4 @@ select, option, .card .suit {
       font-size: @lg/1.5;
     }
   }
-}
-
-#result {
-  margin-bottom: 0;
 }

@@ -10,7 +10,7 @@ $(function() {
   $.getJSON('assets/probability.json', { async: false }, function(data){
     probability = data
     // Set default probability
-    $('#result').html(probability['AAo'][0])
+    set_result(probability.AAo[0])
 
   })
 
@@ -45,11 +45,11 @@ $(function() {
     var suit
     if(is_suited()) {
       suit = '♠'
-      $('#card-2').css('color', 'inherit')
+      $('#card-2').removeClass('text-danger')
     }
     else {
       suit = '♥'
-      $('#card-2').css('color', 'red')
+      $('#card-2').addClass('text-danger')
     }
     $('#card-2 .suit').html(suit)
   })
@@ -71,7 +71,7 @@ $(function() {
       }
       console.debug('Looking up ' + lookup)
       var result = probability[lookup][$('#players').val() - 2]
-      $('#result').html(result)
+      set_result(result)
       console.debug(result)
     }
   })
@@ -82,6 +82,20 @@ $(function() {
   function is_suited() {
     // return $('#suited').is(':checked')
     return $('#suited').val() == 's'
+  }
+
+  function set_result(result) {
+    $('#result').html(result + '%')
+    var status
+    if(result >= 100/$('#players').val()) {
+      status = 'text-success'
+    }
+    else {
+      status = 'text-danger'
+    }
+    $('#result').removeClass().addClass(status)
+    console.log(100/$('#players').val())
+    console.log(result >= 100/$('#players').val())
   }
 
 })

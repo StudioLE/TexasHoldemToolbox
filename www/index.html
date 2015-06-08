@@ -8,6 +8,7 @@
 <!--link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"-->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/sandstone/bootstrap.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400">
 <link rel="stylesheet" href="assets/master.css">
 <!-- <link rel="stylesheet/less" href="assets/master.less">
 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.2/less.min.js"></script> -->
@@ -24,7 +25,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#/">Texas Hold'em Toolbox</a>
+      <a class="navbar-brand" href="#">Texas Hold'em Toolbox</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,41 +37,58 @@
   </div><!-- /.container-fluid -->
 </nav>
 </div>
-<div class="container">
-  <div class="hands">
-    <h1>Hole Cards</h1>
-    <p>Probability that your hand will end up being the best hand</p>
-    <div class="row settings">
-      <div class="col-sm-3">
-          <select class="form-control" id="players"></select>
+
+<div class="mid">
+  <div class="container">
+    <div class="hands">
+      <h1>Hole Cards</h1>
+      <p>Probability that your hand will end up being the best hand</p>
+      <div class="row settings">
+        <div class="col-sm-3">
+            <select class="form-control" id="players"></select>
+        </div>
+        <div class="col-sm-3">
+          <select class="form-control" id="suited">
+            <option value="o">Off-suit</option>
+            <option value="s">Suited</option>
+          </select>
+        </div>
+      </div> <!-- .row -->
+  	  <div class="row">
+        <div class="col-sm-2">
+          <div class="card" id="card-1">
+            <select class="form-control"></select>
+            <div class="suit">♠</div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="card text-danger" id="card-2">
+            <select class="form-control"></select>
+            <div class="suit">♥</div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <h2 id="result">Loading...</h2>
+          <p>Probability</p>
+        </div>
+  	  </div> <!-- .row -->
+  	</div> <!-- .hands -->
+  </div> <!-- .container -->
+</div> <!-- .mid -->
+
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 credit">
+        <p>Designed and built<br>
+         by <a href="https://studiole.uk">StudioLE</a></p>
       </div>
-      <div class="col-sm-3">
-        <select class="form-control" id="suited">
-          <option value="o">Off-suit</option>
-          <option value="s">Suited</option>
-        </select>
+      <div class="col-sm-6">
+        <a class="navbar-brand" href="#">Texas Hold'em Toolbox</a>
       </div>
     </div> <!-- .row -->
-	  <div class="row">
-      <div class="col-sm-2">
-        <div class="card" id="card-1">
-          <select class="form-control"></select>
-          <div class="suit">♠</div>
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="card" id="card-2">
-          <select class="form-control"></select>
-          <div class="suit">♥</div>
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <h2 id="result">Loading...</h2>
-        <p>Probability</p>
-      </div>
-	  </div> <!-- .row -->
-	</div> <!-- .hands -->
-</div> <!-- .container -->
+  </div> <!-- .container -->
+</div> <!-- .footer -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.min.js"></script>
